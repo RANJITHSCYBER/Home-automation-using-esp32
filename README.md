@@ -1,214 +1,282 @@
-🌿 Jungle Nexus - ESP32 IoT Environmental Monitoring System
-🔥 Neon Jungle Cyber-Ecosystem
-Welcome to JUNGLE NEXUS, a futuristic IoT environmental monitoring system that transforms sensor data into a vibrant neon jungle cyberpunk experience! This ESP32-based project creates a WiFi access point with a stunning web interface that visualizes environmental data through tribal-themed biome cards.
+🌿 JUNGLE NEXUS - ESP32 IoT Environmental Monitoring System
+<div align="center">
+https://img.shields.io/badge/Neon-Jungle%2520Ecosystem-00ff88?style=for-the-badge&logo=arduino&logoColor=white
+https://img.shields.io/badge/ESP32-E7352C?style=for-the-badge&logo=espressif&logoColor=white
+https://img.shields.io/badge/WiFi_Access_Point-9d00ff?style=for-the-badge&logo=wifi&logoColor=white
+https://img.shields.io/badge/IoT-00ffff?style=for-the-badge&logo=internet-explorer&logoColor=black
 
-🎯 Project Vision
-Imagine a cyberpunk jungle where technology meets nature. This project creates an immersive dashboard that represents different environmental sensors as mystical jungle biomes - from volcanic cores to misty swamps, each with its own neon aesthetic and tribal guardians.
+A Cyberpunk Jungle-Themed Environmental Monitoring System with Stunning Web Dashboard
 
-🌟 Key Features
-Sensor Ecosystem
-Temperature Monitoring (Volcanic Core Biome) - DHT22 sensor
+https://img.shields.io/badge/Version-2.4.0-brightgreen?style=flat-square
+https://img.shields.io/badge/License-MIT-blue?style=flat-square
+https://img.shields.io/badge/Arduino-Compatible-00979D?style=flat-square&logo=arduino&logoColor=white
 
-Humidity Tracking (Misty Swamp Biome) - DHT22 sensor
+</div>
+📸 Dashboard Preview
+<div align="center">
+https://via.placeholder.com/800x400/001a00/00ff88?text=Neon+Jungle+Dashboard+Preview
+Neon Jungle Interface with Real-time Sensor Data
 
-Air Quality Analysis (Cavern Air Biome) - MQ2 (smoke) & MQ3 (alcohol) sensors
+</div>
+🎯 About The Project
+Jungle Nexus transforms environmental monitoring into an immersive cyberpunk jungle experience. This ESP32-based system creates its own WiFi network with a breathtaking web dashboard that visualizes sensor data through mystical jungle biomes, complete with tribal patterns, neon aesthetics, and interactive spirit controls.
 
-Rain Detection (River Flow Biome) - Raindrop sensor
+Key Features
+🌡️ Multi-sensor monitoring (Temperature, Humidity, Air Quality, Rain, Motion)
 
-Motion Sensing (Predator Watch Biome) - PIR sensor
+🎨 Stunning neon jungle UI with animated elements
 
-LED Spirit Lights (Canopy Lights Biome) - 4x controlled LEDs
+📱 Fully responsive dashboard - works on any device
 
+🔄 Real-time updates without page refresh
+
+🎚️ Interactive controls for LEDs, servo, and security
+
+🔊 Audio-visual alerts for critical conditions
+
+🌐 Standalone WiFi Access Point - no internet required
+
+🛠️ Hardware Requirements
+Component	Quantity	Purpose
+ESP32 Dev Board	1	Main controller
+DHT22 Sensor	1	Temperature & Humidity
+MQ2 Sensor	1	Smoke/Gas detection
+MQ3 Sensor	1	Alcohol detection
+Raindrop Sensor	1	Rain/Water detection
+PIR Sensor	1	Motion detection
+SG90 Servo Motor	1	"Waterfall Gate" control
+Active Buzzer	1	Audio alerts
+LEDs (4 colors)	4	"Jungle Spirit" indicators
+Jumper Wires	-	Connections
+Breadboard	1	Prototyping
+🔧 Pin Connections
+ESP32 Pin	Connected To	Description
+GPIO34	MQ2 A0	Smoke sensor analog read
+GPIO35	MQ3 A0	Alcohol sensor analog read
+GPIO32	DHT22 Data	Temperature/Humidity
+GPIO25	Buzzer +	Audio alerts
+GPIO33	Raindrop A0	Rain detection
+GPIO26	PIR OUT	Motion detection
+GPIO27	Servo Signal	Waterfall gate control
+GPIO12	LED1	Fire Spirit (Red)
+GPIO13	LED2	Forest Spirit (Green)
+GPIO14	LED3	Water Spirit (Blue)
+GPIO15	LED4	Sun Spirit (Yellow)
+3.3V	All Sensors VCC	Power supply
+GND	All Sensors GND	Ground
+🚀 Quick Start Guide
+1. Installation
+bash
+# Clone the repository
+git clone https://github.com/yourusername/jungle-nexus.git
+
+# Open in Arduino IDE
+cd jungle-nexus
+open jungle_nexus.ino
+2. Install Required Libraries
+In Arduino IDE, install these libraries via Library Manager:
+
+WiFi (ESP32)
+
+WebServer (ESP32)
+
+DHT sensor library by Adafruit
+
+ESP32Servo by Kevin Harrington
+
+3. Upload Code
+Select your ESP32 board in Tools → Board
+
+Choose correct COM port
+
+Click Upload
+
+4. Connect & Access
+Power up your ESP32
+
+Look for WiFi network: JUNGLE-NEXUS
+
+Connect with password: neon2024
+
+Open browser and navigate to: http://192.168.4.1
+
+🌈 Dashboard Features
+Biome Cards
+Each sensor group is represented as a mystical jungle biome:
+
+Biome	Sensor	Theme Color	Icon
+Volcanic Core	Temperature	Lava Red	🔥
+Misty Swamp	Humidity	Electric Blue	💧
+Cavern Air	Air Quality (MQ2/MQ3)	Deep Purple	💨
+Predator Watch	Motion (PIR)	Jungle Green	🐾
+River Flow	Rain Detection	Cyan	🌧️
+Canopy Lights	LED Controls	Toxic Yellow	🌟
 Interactive Controls
-Tribal Guardian Mode - Security activation with motion alerts
+Tribal Guardian Toggle - Activate security mode
 
-Waterfall Gate Control - Servo-controlled "waterfall" (0-180°)
+Waterfall Gate - Control servo position (0-180°)
 
-Spirit LED System - Four individually controlled "jungle spirits"
+Spirit LEDs - Individual control of 4 jungle spirits
 
-Automated Responses - Servo adjusts automatically during rain
+Mass Control - Awaken/Rest all spirits simultaneously
 
-Audible Alerts - Buzzer notifications for critical events
-
-🛠️ Technical Stack
-Hardware Components
-ESP32 Development Board
-
-DHT22 Temperature & Humidity Sensor
-
-MQ2 Smoke/Gas Sensor
-
-MQ3 Alcohol/Gas Sensor
-
-Raindrop Sensor
-
-PIR Motion Sensor
-
-Servo Motor (Simulates waterfall gate)
-
-Buzzer (Audio alerts)
-
-4x LEDs (Jungle spirit lights)
-
-Software Architecture
-WiFi Access Point Mode (No internet required)
-
-WebServer with AJAX API
-
-Real-time Dashboard (No page refresh)
-
-JSON Data API for sensor readings
-
-Neon Jungle UI with animated CSS
-
-🎨 UI/UX Features
-Visual Design
-Neon Jungle Color Palette - Electric greens, deep purples, toxic yellows
-
-Tribal Patterns & Vines - Animated background elements
-
-Biome Cards - Each sensor group in themed containers
-
-Animated Gauges - Circular progress indicators
-
-Smooth Transitions - All interactions without page reload
-
-Interactive Elements
-Tribal Toggle Switches - Custom-styled controls
-
-Waterfall Progress Bar - Visual servo position indicator
-
-Status Badges - Dynamic color-coded states
-
-Real-time Updates - 2-second sensor refresh
-
-Mobile Responsive - Works on all devices
-
-📡 Network Setup
-The system creates its own WiFi network:
-
-SSID: JUNGLE-NEXUS
-
-Password: neon2024
-
-IP Address: 192.168.4.1
-
-Port: 80
-
-🚀 Setup Instructions
-1. Hardware Connections
+⚙️ System Configuration
+Sensor Thresholds
 cpp
-MQ2_PIN = 34      // Smoke sensor
-MQ3_PIN = 35      // Alcohol sensor
-DHT_PIN = 32      // Temperature/Humidity
-BUZZER_PIN = 25   // Alert buzzer
-RAINDROP_PIN = 33 // Rain sensor
-PIR_PIN = 26      // Motion sensor
-SERVO_PIN = 27    // Waterfall gate
-LED1_PIN = 12     // Fire Spirit
-LED2_PIN = 13     // Forest Spirit (Default ON)
-LED3_PIN = 14     // Water Spirit
-LED4_PIN = 15     // Sun Spirit
-2. Installation
-Clone the repository
+#define MQ2_THRESHOLD 1500    // Smoke detection threshold
+#define MQ3_THRESHOLD 1500    // Alcohol detection threshold
+#define RAINDROP_THRESHOLD 2000 // Rain detection threshold
+WiFi Settings
+cpp
+const char* ssid = "JUNGLE-NEXUS";
+const char* password = "neon2024";
+Update Intervals
+Sensor readings: Every 2 seconds
 
-Open in Arduino IDE
+Dashboard update: Every 2 seconds
 
-Install required libraries:
+Rain check: Every 500ms
 
-WiFi.h
+🔄 Automated Behaviors
+Smart Responses
+Rain Detection: Servo automatically opens to 180° during rain
 
-WebServer.h
+Safety Mode: Motion triggers continuous buzzer alerts
 
-DHT.h
+Air Quality: Gas/smoke above thresholds triggers warnings
 
-ESP32Servo.h
+Temperature Alerts: Color-coded status changes
 
-Upload to ESP32
+LED Default States
+LED1 (Fire Spirit): OFF
 
-Connect to JUNGLE-NEXUS WiFi
+LED2 (Forest Spirit): ON (Default jungle theme)
 
-Navigate to 192.168.4.1
+LED3 (Water Spirit): OFF
 
-⚙️ System Logic
-Automated Behaviors
-Rain Detection: Servo opens to 180° during rain, returns to 90° after
+LED4 (Sun Spirit): OFF
 
-Safety Mode: Motion detection triggers buzzer alerts
+📡 API Endpoints
+Endpoint	Method	Description	Response
+/	GET	Main dashboard	HTML page
+/sensorData	GET	JSON sensor data	{temp, humidity, mq2, mq3, ...}
+/toggleSafety	POST	Toggle security mode	{success, safetyMode}
+/toggleLed?led=1-4	POST	Toggle specific LED	{success, led, state}
+/allLedsOn	POST	Turn all LEDs ON	{success}
+/allLedsOff	POST	Turn all LEDs OFF	{success}
+/servoControl?angle=0-180	POST	Set servo position	{success, servoPosition}
+🎨 UI Customization
+The dashboard uses a custom CSS theme with these variables:
 
-Air Quality: Gas/smoke thresholds trigger warnings
+css
+:root {
+  --jungle-green: #00ff88;
+  --neon-pink: #ff00ff;
+  --toxic-yellow: #ffff00;
+  --deep-purple: #9d00ff;
+  --electric-blue: #00ffff;
+  --lava-red: #ff3300;
+  --dark-jungle: #001a00;
+}
+To customize:
 
-Temperature/Humidity: Visual status changes based on readings
+Modify color variables in the HTML
 
-Manual Controls
-Toggle individual LED "spirits"
+Adjust animations in the CSS section
 
-Activate/deactivate guardian mode
+Update icons from Font Awesome
 
-Control servo position manually
+Modify biome card styles
 
-Mass LED control (all on/off)
+📱 Mobile Compatibility
+The dashboard is fully responsive:
 
-🎮 Dashboard Sections
-Volcanic Core - Temperature monitoring with heat gauge
+Desktop: Full grid layout with 6 biome cards
 
-Misty Swamp - Humidity tracking with moisture meter
+Tablet: 2-column layout
 
-Cavern Air - Gas levels with toxicity indicator
+Mobile: Single column, optimized touch controls
 
-Predator Watch - Motion detection with guardian toggle
+🐛 Troubleshooting
+Issue	Solution
+Can't connect to WiFi	Check ESP32 power, reset board
+Sensors not reading	Verify wiring, check pin definitions
+Dashboard not loading	Clear browser cache, check IP
+Servo not moving	Check power supply (needs 5V)
+Buzzer not sounding	Check polarity, try different pin
+🚀 Enhancement Ideas
+Future Features
+Data logging to SD card
 
-River Flow - Rain sensing with waterfall gate control
+MQTT integration for cloud monitoring
 
-Canopy Lights - LED spirit controls with tribal toggles
+Mobile app with push notifications
 
-🔧 API Endpoints
-GET /sensorData - JSON sensor readings
+Voice control integration
 
-POST /toggleSafety - Toggle security mode
+Weather forecast integration
 
-POST /toggleLed?led=1-4 - Control individual LEDs
+Multi-language dashboard
 
-POST /allLedsOn / /allLedsOff - Mass LED control
+Advanced alert scheduling
 
-POST /servoControl?angle=0-180 - Set servo position
+Export data as CSV/JSON
 
-🎯 Use Cases
-Home Automation - Environmental monitoring with style
+Sensor Additions
+Soil moisture sensor
 
-Educational Tool - IoT and web development learning
+UV light sensor
 
-Art Installation - Interactive cyberpunk exhibit
+Sound level sensor
 
-Workshop Demo - Complete IoT system example
+CO2 sensor
 
-Prototype Platform - Extensible sensor framework
+Barometric pressure sensor
 
-📁 Project Structure
-text
-jungle-nexus/
-├── jungle_nexus.ino      # Main ESP32 code
-├── libraries/            # Required dependencies
-├── images/               # UI assets and screenshots
-├── wiring_diagram.png    # Connection schematic
-└── README.md            # This file
-🤝 Contributing
-This project welcomes enhancements! Consider:
+📚 Learning Resources
+ESP32 Official Documentation
 
-Adding more sensor types
+Arduino WebServer Library
 
-Implementing data logging
+DHT Sensor Library
 
-Creating mobile app companion
+Neon CSS Effects
 
-Adding sound effects
+👥 Contributing
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-Extending automation rules
+Fork the repository
 
-Multi-language support
+Create your feature branch (git checkout -b feature/AmazingFeature)
+
+Commit your changes (git commit -m 'Add some AmazingFeature')
+
+Push to the branch (git push origin feature/AmazingFeature)
+
+Open a Pull Request
 
 📜 License
-Open-source under MIT License. Tribal rights reserved by the Ancient Tech Council.
+Distributed under the MIT License. See LICENSE for more information.
 
-🌐 Connect
-Experience the neon jungle at 192.168.4.1 - where technology meets tribal mysticism!
+🙏 Acknowledgements
+Icons: Font Awesome 6.0
+
+Color Palette: Cyberpunk/Neon aesthetic
+
+Inspiration: Tribal patterns and jungle ecosystems
+
+Community: ESP32 Arduino community
+
+📞 Contact & Support
+GitHub Issues: Report bugs or request features
+
+Discussions: Join the conversation
+
+<div align="center">
+✨ May the jungle spirits guide your sensors! ✨
+Connect to JUNGLE-NEXUS and experience the neon jungle at 192.168.4.1
+
+https://img.shields.io/badge/Made%2520with-%E2%9D%A4%EF%B8%8F%2520and%2520ESP32-red?style=for-the-badge
+https://img.shields.io/badge/Status-Operational-green?style=for-the-badge
+
+</div>
